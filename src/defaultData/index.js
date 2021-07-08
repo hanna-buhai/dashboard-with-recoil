@@ -15,6 +15,10 @@ export const students = {
     id: 'student-4',
     name: 'Amanda Wood',
   },
+  'student-5': {
+    id: 'student-5',
+    name: 'Poline Matsko',
+  },
 }
 
 export const subjects = {
@@ -39,7 +43,7 @@ export const subjects = {
 export const studyGroups = {
   'group-1': ['student-1', 'student-3'],
   'group-2': ['student-2'],
-  'group-3': ['student-2', 'student-3'],
+  'group-3': ['student-2', 'student-3', 'student-5'],
   'group-4': ['student-4'],
 }
 
