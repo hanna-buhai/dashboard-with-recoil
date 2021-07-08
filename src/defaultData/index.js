@@ -83,4 +83,12 @@ export const assignments = {
     dueDate: new Date(),
     finishedDate: null,
   },
+  'assignment-2': {
+    id: 'assigment-2',
+    name: 'Spanish - Grammar Test',
+    subjectId: 'subject-4',
+    assigneeId: 'student-4',
+    dueDate: new Date(),
+    finishedDate: new Date(),
+  },
 }
