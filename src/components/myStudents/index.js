@@ -8,15 +8,6 @@ import Student from './student'
 
 import './index.css'
 
-const selectorOptions = [
-  {
-    id: 'viewAll',
-    isDefault: true,
-    text: 'View All',
-    onPress: () => console.log('View All in My Students'),
-  },
-]
-
 const MyStudents = props => {
   const studentsList = useRecoilValue(studentsListState)
 
@@ -25,8 +16,8 @@ const MyStudents = props => {
       <div className="my-students">
         <SectionHeader
           header="My Students"
-          actionsList={selectorOptions}
-          selectedActionId="viewAll"
+          actionLinkName="View All"
+          actionLink={() => console.log('View All in My Students')}
         />
         {studentsList.map(student => (
           <Student studentId={student} />

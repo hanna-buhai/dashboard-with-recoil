@@ -5,22 +5,14 @@ import SectionHeader from '../common/sectionHeader'
 
 import './index.css'
 
-const selectorOptions = [
-  {
-    id: 'viewAll',
-    isDefault: true,
-    text: 'View All',
-    onPress: () => console.log('View All in Media'),
-  },
-]
 const Media = props => {
   return (
     <DashboardCard>
       <div className="media">
         <SectionHeader
-          header="Completed Tasks"
-          actionsList={selectorOptions}
-          selectedActionId="viewAll"
+          header="Media for Lessons"
+          actionLinkName="View All"
+          actionLink={() => console.log('View All in Media')}
         />
         <p>Media</p>
         <p>Media</p>
