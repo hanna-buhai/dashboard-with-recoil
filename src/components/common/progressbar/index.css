@@ -1,0 +1,26 @@
+.progressbar {
+  display: flex;
+  flex: 1;
+  justify-content: start;
+  align-items: stretch;
+  height: 8px;
+  background-color: var(--main-bg-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressbar-display {
+  border-radius: 4px;
+}
+
+.progressbar-display--blue {
+  background-color: var(--accent-blue);
+}
+
+.progressbar-display--orange {
+  background-color: var(--accent-orange);
+}
+
+.progressbar-display--red {
+  background-color: var(--accent-red);
+}

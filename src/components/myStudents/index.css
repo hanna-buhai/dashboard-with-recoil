@@ -3,6 +3,7 @@
   flex-direction: column;
   flex: 1;
   align-items: stretch;
+  padding-bottom: 16px;
 }
 
 .my-student-info {
@@ -10,6 +11,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  height: 40px;
+  margin: 8px 0;
 }
 
 .my-student-info__name {
@@ -21,8 +24,41 @@
   color: var(--main-text);
 }
 
+.my-student-info__avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.my-student-info__avatar--blue {
+  background-color: var(--accent-blue-light);
+}
+
+.my-student-info__avatar--orange {
+  background-color: var(--accent-orange-light);
+}
+
+.my-student-info__avatar--red {
+  background-color: var(--accent-red-light);
+}
+
 .my-student-info__progressbar {
   display: flex;
   flex: 1;
   margin: 0 16px;
+}
+
+.my-student-info__progress-percentage-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  margin-left: 16px;
+}
+
+.my-student-info__progress-percentage {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--main-text);
 }
