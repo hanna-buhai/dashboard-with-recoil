@@ -4,3 +4,25 @@
   flex: 1;
   align-items: stretch;
 }
+
+.my-student-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-student-info__name {
+  display: flex;
+  flex: 2;
+  margin: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--main-text);
+}
+
+.my-student-info__progressbar {
+  display: flex;
+  flex: 1;
+  margin: 0 16px;
+}
