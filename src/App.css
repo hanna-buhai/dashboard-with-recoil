@@ -39,7 +39,7 @@ input[type='reset'] {
 }
 
 .data-updater__header {
-  margin: 16px;
+  margin: 16px 32px;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -58,11 +58,11 @@ input[type='reset'] {
 }
 
 .app__section--left {
-  flex: 3;
+  flex: 5;
 }
 
 .app__section--right {
-  flex: 1;
+  flex: 2;
 }
 
 .app__section-group {

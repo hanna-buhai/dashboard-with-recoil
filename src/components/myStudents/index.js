@@ -12,7 +12,7 @@ const MyStudents = props => {
   const studentsList = useRecoilValue(studentsListState)
 
   return (
-    <DashboardCard>
+    <DashboardCard fullContainer>
       <div className="my-students">
         <SectionHeader
           header="My Students"

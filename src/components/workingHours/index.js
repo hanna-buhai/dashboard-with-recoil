@@ -16,7 +16,7 @@ const selectorOptions = [
 
 const WorkingHours = props => {
   return (
-    <DashboardCard>
+    <DashboardCard fullContainer>
       <div className="working-hours">
         <SectionHeader
           header="Working Hours"
