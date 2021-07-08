@@ -1,0 +1,27 @@
+.section-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 42px;
+  margin-top: 8px;
+}
+
+.section-header__text {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--main-text);
+}
+
+.section-header__action--default {
+  color: var(--secondary-text);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.section-header__action--highlight {
+  background-color: var(--accent-orange-light);
+  color: var(--accent-orange);
+  font-size: 14px;
+  font-weight: 500;
+}
