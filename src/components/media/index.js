@@ -11,8 +11,8 @@ const Media = props => {
       <div className="media">
         <SectionHeader
           header="Media for Lessons"
-          actionsList={selectorOptions}
-          selectedActionId="viewAll"
+          actionLinkName="View All"
+          actionLink={() => console.log('View All in Media')}
         />
         <p>Media</p>
         <p>Media</p>
