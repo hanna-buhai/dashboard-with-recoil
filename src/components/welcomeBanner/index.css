@@ -1,0 +1,27 @@
+.welcome-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-bottom: 16px;
+}
+
+.welcome-banner__welcome {
+  font-size: calc(10px + 2vmin);
+  font-weight: 300;
+  margin: 24px 0;
+}
+
+.welcome-banner__welcome--bold {
+  font-weight: 500;
+}
+
+.welcome-banner__stats {
+  margin: 8px 0;
+  font-size: 16px;
+  color: var(--secondary-text);
+}
+
+.welcome-banner__stats--bold {
+  color: var(--accent-orange);
+  font-weight: 500;
+}

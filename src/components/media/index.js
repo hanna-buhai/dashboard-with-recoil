@@ -18,7 +18,7 @@ const Media = props => {
     <DashboardCard>
       <div className="media">
         <SectionHeader
-          header="Completed Tasks"
+          header="Media for Lessons"
           actionsList={selectorOptions}
           selectedActionId="viewAll"
         />
