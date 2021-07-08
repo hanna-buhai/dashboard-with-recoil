@@ -6,7 +6,7 @@ import { studentsItemStateWithId, assignmentsListState, assignmentItemStateWithI
 
 export const studentProgressStatsWithId = memoize(id =>
   selector({
-    key: `${id}-with-progress-stats`,
+    key: `${id}-progress-stats`,
     get: ({ get }) => {
       const assignments = get(assignmentsListState)
 
@@ -26,3 +26,31 @@ export const studentProgressStatsWithId = memoize(id =>
     },
   }),
 )
+
+export const finishedAssignmentsList = selector({
+  key: 'finishedAssignmentsListState',
+  get: ({ get }) => {
+    const assignments = get(assignmentsListState)
+    const finishedAssignments = []
+    assignments.forEach(assignmentId => {
+      const assignment = get(assignmentItemStateWithId(assignmentId))
+
+      if (assignment.finishedDate) {
+        finishedAssignments.push(assignmentId)
+      }
+    })
+    return finishedAssignments
+  },
+})
+
+export const studentsProgressStats = selector({
+  key: 'students-total-progress-stats',
+  get: ({ get }) => {
+    const assignments = get(assignmentsListState)
+    const finishedAssignment = get(finishedAssignmentsList)
+
+    return assignments.length > 0
+      ? Math.round((100 * finishedAssignment.length) / assignments.length)
+      : 0
+  },
+})
