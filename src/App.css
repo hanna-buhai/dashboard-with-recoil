@@ -49,11 +49,7 @@ input[type='reset'] {
   display: flex;
   flex: 1;
   flex-direction: row;
-  padding: 24px 8px;
-}
-
-.App-link {
-  color: #61dafb;
+  padding: 24px 16px;
 }
 
 .app__section {
