@@ -11,20 +11,21 @@ import {
 
 import './index.css'
 
-const ClassUpdater = ({ classId }) => {
+const AssignmentGeneratorForClass = ({ classId }) => {
   const classWithData = useRecoilValue(classItemStateWithId(classId))
   const attendeesList = useRecoilValue(studyGroupsItemStateWithId(classWithData.attendees))
   const subjectData = useRecoilValue(subjectsItemStateWithId(classWithData.subjectId))
 
-  const [assignmentsList, set1] = useRecoilState(assignmentsListState)
+  const [assignmentsList, setAssignmentsList] = useRecoilState(assignmentsListState)
   const [newCount, setNewCount] = useState(assignmentsList.length + 1)
-  const set2 = useSetRecoilState(assignmentItemStateWithId(`assignment-${newCount}`))
+  const newAssignmentId = `assignment-${newCount}`
+  const setAssignmentData = useSetRecoilState(assignmentItemStateWithId(newAssignmentId))
 
   const generateAssignment = () => {
     attendeesList.forEach(attendee => {
-      set1(oldTodoList => [...oldTodoList, `assignment-${newCount}`])
-      set2({
-        id: `assignment-${newCount}`,
+      setAssignmentsList(oldTodoList => [...oldTodoList, newAssignmentId])
+      setAssignmentData({
+        id: newAssignmentId,
         name: 'Temp assignment',
         subjectId: classWithData.subjectId,
         assigneeId: attendee,
@@ -36,22 +37,29 @@ const ClassUpdater = ({ classId }) => {
   }
 
   return (
-    <div>
-      <div>{subjectData.name}</div>
-      <div>Amount of students: {attendeesList.length}</div>
-      <button onClick={generateAssignment}>Generate assignment</button>
+    <div className="assignment-generator">
+      <div className="assignment-generator__data">
+        <div className="assignment-generator__subject">{subjectData.name}</div>
+        <div className="assignment-generator__group">
+          Amount of students: {attendeesList.length}
+        </div>
+      </div>
+      <button onClick={generateAssignment} className="assignment-generator__button">
+        Generate
+      </button>
     </div>
   )
 }
 
-const DataUpdater = props => {
+const DataUpdater = () => {
   const classes = useRecoilValue(classesListState)
 
   return (
     <div className="data-updater">
       <h2 className="data-updater__header">Data Updater</h2>
+      <h3 className="generator__header ">Generate Assignment</h3>
       {classes.map(classId => (
-        <ClassUpdater classId={classId} />
+        <AssignmentGeneratorForClass classId={classId} />
       ))}
     </div>
   )

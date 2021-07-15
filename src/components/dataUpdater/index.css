@@ -1,10 +1,50 @@
 .data-updater {
   background-color: var(--dark-bg-color);
   z-index: 10;
+  padding: 0 8px 16px;
 }
 
 .data-updater__header {
   margin: 16px 64px;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--dark-main-text);
+}
+
+.generator__header {
+  margin-top: 16px;
+  font-size: calc(6px + 2vmin);
+  color: var(--dark-main-text);
+}
+
+.assignment-generator {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  margin-bottom: 12px;
+}
+
+.assignment-generator__data {
+  display: flex;
+  flex-direction: column;
+  margin-right: 16px;
+}
+
+.assignment-generator__subject {
+  font-size: 16px;
+  color: var(--dark-main-text);
+}
+
+.assignment-generator__group {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--dark-secondary-text);
+}
+
+.assignment-generator__button {
+  padding: 12px 14px;
+  background-color: var(--accent-orange-light);
+  color: var(--accent-orange);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
 }
