@@ -1,17 +1,11 @@
-const getColorById = id => {
-  switch (id) {
-    case 1:
-      return 'orange'
-    case 2:
-      return 'blue'
-    case 3:
-      return 'red'
-  }
-  return 'orange'
+const COLORS_BY_ID = {
+  1: 'orange',
+  2: 'blue',
+  3: 'red',
 }
 
 export default function getColorMarker() {
   const colorMarkerId = Math.ceil(Math.random() * 3)
 
-  return getColorById(colorMarkerId)
+  return COLORS_BY_ID[colorMarkerId] || 'orange'
 }
