@@ -81,7 +81,7 @@ export const lessons = {
 export const assignments = {
   'assignment-1': {
     id: 'assigment-1',
-    name: 'Essey',
+    name: '',
     subjectId: 'subject-4',
     assigneeId: 'student-4',
     dueDate: new Date('2021-12-17T00:00:00'),
@@ -89,7 +89,7 @@ export const assignments = {
   },
   'assignment-2': {
     id: 'assigment-2',
-    name: 'Grammar Test',
+    name: '',
     subjectId: 'subject-4',
     assigneeId: 'student-4',
     dueDate: new Date('2021-12-17T00:00:00'),
@@ -97,7 +97,7 @@ export const assignments = {
   },
   'assignment-3': {
     id: 'assigment-3',
-    name: 'Irregular Verbs Test',
+    name: '',
     subjectId: 'subject-4',
     assigneeId: 'student-4',
     dueDate: new Date('2021-12-17T00:00:00'),
@@ -105,7 +105,7 @@ export const assignments = {
   },
   'assignment-4': {
     id: 'assigment-4',
-    name: 'Irregular Verbs Test',
+    name: '',
     subjectId: 'subject-1',
     assigneeId: 'student-1',
     dueDate: new Date('2021-12-17T00:00:00'),
@@ -113,7 +113,7 @@ export const assignments = {
   },
   'assignment-5': {
     id: 'assigment-5',
-    name: 'Irregular Verbs Test',
+    name: '',
     subjectId: 'subject-2',
     assigneeId: 'student-2',
     dueDate: new Date('2021-12-17T00:00:00'),
@@ -121,7 +121,7 @@ export const assignments = {
   },
   'assignment-6': {
     id: 'assigment-6',
-    name: 'Irregular Verbs Test',
+    name: '',
     subjectId: 'subject-1',
     assigneeId: 'student-3',
     dueDate: new Date('2021-12-17T00:00:00'),

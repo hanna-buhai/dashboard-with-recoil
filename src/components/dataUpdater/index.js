@@ -8,6 +8,7 @@ import {
   assignmentsListState,
   assignmentItemStateWithId,
 } from '../../state/atoms'
+import getRandomAssignment from '../../utils/getRandomAssignment'
 
 import './index.css'
 
@@ -26,7 +27,7 @@ const AssignmentGeneratorForClass = ({ classId }) => {
       setAssignmentsList(oldTodoList => [...oldTodoList, newAssignmentId])
       setAssignmentData({
         id: newAssignmentId,
-        name: 'Temp assignment',
+        name: getRandomAssignment(),
         subjectId: classWithData.subjectId,
         assigneeId: attendee,
         dueDate: new Date('2021-12-17T00:00:00'),

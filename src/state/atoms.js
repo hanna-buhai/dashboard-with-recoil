@@ -2,6 +2,7 @@ import { atom } from 'recoil'
 import { students, subjects, studyGroups, classes, lessons, assignments } from '../defaultData'
 import memoize from '../utils/memoize'
 import getColorMarker from '../utils/getColorMarker'
+import getRandomAssignment from '../utils/getRandomAssignment'
 
 export const studentsListState = atom({
   key: 'studentsListState',
@@ -125,6 +126,6 @@ export const assignmentItemStateWithId = memoize(id => {
 
   return atom({
     key: id,
-    default: assignment,
+    default: { ...assignment, name: getRandomAssignment() },
   })
 })
