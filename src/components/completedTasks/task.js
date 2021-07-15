@@ -14,8 +14,8 @@ const Task = ({ taskId }) => {
   const assignment = useRecoilValue(assignmentItemStateWithId(taskId))
   const student = useRecoilValue(studentsItemStateWithId(assignment.assigneeId))
   if (!assignment) return null
-  console.log(assignment)
-  console.log(student)
+  // console.log(assignment)
+  // console.log(student)
   return (
     <div className="task">
       <div className="task__icon" />
