@@ -7,9 +7,23 @@ import Progressbar from '../common/progressbar'
 
 import './index.css'
 
+const StudentProgress = ({ studentId, colorMarker }) => {
+  const studentProgression = useRecoilValue(studentProgressStatsWithId(studentId))
+
+  return (
+    <>
+      <div className="my-student-info__progressbar">
+        <Progressbar value={studentProgression} colorMarker={colorMarker} />
+      </div>
+      <div className="my-student-info__progress-percentage-container ">
+        <span className="my-student-info__progress-percentage">{studentProgression}%</span>
+      </div>
+    </>
+  )
+}
+
 const Student = ({ studentId }) => {
   const student = useRecoilValue(studentsItemStateWithId(studentId))
-  const studentProgression = useRecoilValue(studentProgressStatsWithId(studentId))
 
   if (!student) return null
 
@@ -17,12 +31,7 @@ const Student = ({ studentId }) => {
     <div className="my-student-info">
       <div className={`my-student-info__avatar my-student-info__avatar--${student.colorMarker}`} />
       <span className="my-student-info__name">{student.name}</span>
-      <div className="my-student-info__progressbar">
-        <Progressbar value={studentProgression} colorMarker={student.colorMarker} />
-      </div>
-      <div className="my-student-info__progress-percentage-container ">
-        <span className="my-student-info__progress-percentage">{studentProgression}%</span>
-      </div>
+      <StudentProgress studentId={studentId} colorMarker={student.colorMarker} />
     </div>
   )
 }
