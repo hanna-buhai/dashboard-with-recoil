@@ -1,6 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { atom, selector, useRecoilState, useRecoilValue } from 'recoil'
+import { useRecoilValue } from 'recoil'
 import { finishedAssignmentsList } from '../../state/selectors'
 import DashboardCard from '../common/dashboardCard'
 import SectionHeader from '../common/sectionHeader'

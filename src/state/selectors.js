@@ -1,8 +1,6 @@
-import { atom, selector } from 'recoil'
-import { students, subjects, studyGroups, classes, lessons, assignments } from '../defaultData'
+import { selector } from 'recoil'
 import memoize from '../utils/memoize'
-import getColorMarker from '../utils/getColorMarker'
-import { studentsItemStateWithId, assignmentsListState, assignmentItemStateWithId } from './atoms'
+import { assignmentsListState, assignmentItemStateWithId } from './atoms'
 
 export const studentProgressStatsWithId = memoize(id =>
   selector({

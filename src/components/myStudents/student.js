@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useRecoilState, useRecoilValue } from 'recoil'
+import { useRecoilValue } from 'recoil'
 import { studentsItemStateWithId } from '../../state/atoms'
 import { studentProgressStatsWithId } from '../../state/selectors'
 import Progressbar from '../common/progressbar'
