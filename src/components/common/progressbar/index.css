@@ -1,7 +1,7 @@
 .progressbar {
   display: flex;
   flex: 1;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: stretch;
   height: 8px;
   background-color: var(--main-bg-color);
