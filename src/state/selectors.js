@@ -14,11 +14,12 @@ export const studentProgressStatsWithId = memoize(id =>
       assignments.forEach(assignmentId => {
         const assignment = get(assignmentItemStateWithId(assignmentId))
 
-        if (assignment.assigneeId === id) {
+        if (assignment?.assigneeId === id) {
           studentAssignments.push(assignment)
         }
       })
-      const finishedAssignments = studentAssignments.filter(assignment => assignment.finishedDate)
+
+      const finishedAssignments = studentAssignments.filter(assignment => assignment?.finishedDate)
 
       return studentAssignments.length > 0
         ? Math.round((100 * finishedAssignments.length) / studentAssignments.length)
@@ -35,7 +36,7 @@ export const finishedAssignmentsList = selector({
     assignments.forEach(assignmentId => {
       const assignment = get(assignmentItemStateWithId(assignmentId))
 
-      if (assignment.finishedDate) {
+      if (assignment?.finishedDate) {
         finishedAssignments.push(assignmentId)
       }
     })
