@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
+import React from 'react'
+import { useRecoilValue, useRecoilCallback } from 'recoil'
 import {
   classesListState,
   classItemStateWithId,
@@ -8,7 +8,7 @@ import {
   assignmentsListState,
   assignmentItemStateWithId,
 } from '../../state/atoms'
-import getRandomAssignment from '../../utils/getRandomAssignment'
+import getRandomAssignmentName from '../../utils/getRandomAssignment'
 
 import './index.css'
 
@@ -16,24 +16,31 @@ const AssignmentGeneratorForClass = ({ classId }) => {
   const classWithData = useRecoilValue(classItemStateWithId(classId))
   const attendeesList = useRecoilValue(studyGroupsItemStateWithId(classWithData.attendees))
   const subjectData = useRecoilValue(subjectsItemStateWithId(classWithData.subjectId))
+  const assignmentsList = useRecoilValue(assignmentsListState)
 
-  const [assignmentsList, setAssignmentsList] = useRecoilState(assignmentsListState)
-  const [newCount, setNewCount] = useState(assignmentsList.length + 1)
-  const newAssignmentId = `assignment-${newCount}`
-  const setAssignmentData = useSetRecoilState(assignmentItemStateWithId(newAssignmentId))
+  const generateAssignment = useRecoilCallback(
+    ({ set }) =>
+      (id, value) => {
+        set(assignmentsListState, oldAssignmentsList => [...oldAssignmentsList, id])
+        set(assignmentItemStateWithId(id), value)
+      },
+    [],
+  )
 
-  const generateAssignment = () => {
-    attendeesList.forEach(attendee => {
-      setAssignmentsList(oldTodoList => [...oldTodoList, newAssignmentId])
-      setAssignmentData({
+  const generateAssignmentsForGroup = () => {
+    const assignmentName = getRandomAssignmentName()
+    const dueDate = new Date('2021-12-17T00:00:00')
+
+    attendeesList.forEach((attendee, index) => {
+      const newAssignmentId = `assignment-${assignmentsList.length + index + 1}`
+      return generateAssignment(newAssignmentId, {
         id: newAssignmentId,
-        name: getRandomAssignment(),
+        name: assignmentName,
         subjectId: classWithData.subjectId,
         assigneeId: attendee,
-        dueDate: new Date('2021-12-17T00:00:00'),
+        dueDate,
         finishedDate: null,
       })
-      setNewCount(oldCount => oldCount + 1)
     })
   }
 
@@ -45,7 +52,7 @@ const AssignmentGeneratorForClass = ({ classId }) => {
           Amount of students: {attendeesList.length}
         </div>
       </div>
-      <button onClick={generateAssignment} className="assignment-generator__button">
+      <button onClick={generateAssignmentsForGroup} className="assignment-generator__button">
         Generate
       </button>
     </div>
