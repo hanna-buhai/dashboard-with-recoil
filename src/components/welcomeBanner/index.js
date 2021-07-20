@@ -1,12 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { useRecoilValue } from 'recoil'
 import { studentsProgressStats } from '../../state/selectors'
 import DashboardCard from '../common/dashboardCard'
 
 import './index.css'
 
-const WelcomeBanner = props => {
+const WelcomeBanner = () => {
   const totalProgressStats = useRecoilValue(studentsProgressStats)
 
   return (

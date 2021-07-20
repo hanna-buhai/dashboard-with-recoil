@@ -7,6 +7,8 @@ const RisedCardItem = ({ children }) => {
   return <div className="rised-card-item">{children}</div>
 }
 
-RisedCardItem.propTypes = {}
+RisedCardItem.propTypes = {
+  children: PropTypes.node,
+}
 
 export default RisedCardItem

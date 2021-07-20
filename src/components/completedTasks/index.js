@@ -9,7 +9,7 @@ import Task from './task'
 
 import './index.css'
 
-const CompletedTasks = props => {
+const CompletedTasks = () => {
   const finishedAssignments = useRecoilValue(finishedAssignmentsList)
 
   return (

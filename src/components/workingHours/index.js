@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import DashboardCard from '../common/dashboardCard'
 import SectionHeader from '../common/sectionHeader'
 
@@ -14,7 +14,7 @@ const selectorOptions = [
   },
 ]
 
-const WorkingHours = props => {
+const WorkingHours = () => {
   return (
     <DashboardCard fullContainer>
       <div className="working-hours">

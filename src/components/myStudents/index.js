@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil'
 import { studentsListState, studentsItemStateWithId } from '../../state/atoms'
 import DashboardCard from '../common/dashboardCard'
@@ -8,7 +8,7 @@ import Student from './student'
 
 import './index.css'
 
-const MyStudents = props => {
+const MyStudents = () => {
   const studentsList = useRecoilValue(studentsListState)
 
   return (

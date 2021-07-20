@@ -1,8 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import DashboardCard from '../common/dashboardCard'
 
-const UserProfile = props => {
+const UserProfile = () => {
   return (
 
       <DashboardCard>

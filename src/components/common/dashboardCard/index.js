@@ -11,6 +11,9 @@ const DashboardCard = ({ children, fullContainer }) => {
   )
 }
 
-DashboardCard.propTypes = {}
+DashboardCard.propTypes = {
+  children: PropTypes.node,
+  fullContainer: PropTypes.bool,
+}
 
 export default DashboardCard

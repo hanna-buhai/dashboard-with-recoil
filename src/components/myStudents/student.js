@@ -22,6 +22,11 @@ const StudentProgress = ({ studentId, colorMarker }) => {
   )
 }
 
+StudentProgress.propTypes = {
+  studentId: PropTypes.string,
+  colorMarker: PropTypes.string,
+}
+
 const Student = ({ studentId }) => {
   const student = useRecoilValue(studentsItemStateWithId(studentId))
 
@@ -34,6 +39,10 @@ const Student = ({ studentId }) => {
       <StudentProgress studentId={studentId} colorMarker={student.colorMarker} />
     </div>
   )
+}
+
+Student.propTypes = {
+  studentId: PropTypes.string,
 }
 
 export default Student

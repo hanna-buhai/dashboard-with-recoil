@@ -1,11 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import DashboardCard from '../common/dashboardCard'
 import SectionHeader from '../common/sectionHeader'
 
 import './index.css'
 
-const Lessons = props => {
+const Lessons = () => {
   return (
     <DashboardCard>
       <div className="lessons">
