@@ -1,0 +1,6 @@
+.rised-card-item {
+  border-radius: 20px;
+  background: var(--secondary-bg-color);
+  box-shadow: 7px 7px 14px #ebebeb, -7px -7px 14px #ffffff;
+  margin-bottom: 12px;
+}
